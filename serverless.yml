@@ -1,0 +1,9 @@
+name: register-web
+component: website
+
+inputs:
+  region: ap-southeast-1
+  src:
+    src: ./src
+    hook: npm run build
+    dist: ./dist

@@ -1,0 +1,56 @@
+{
+  "name": "serverless-react-ts-tw",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "npm-run-all --parallel 'watch:*'",
+    "build": "parcel build src/index.html  --no-source-maps --no-cache",
+    "watch:start": "parcel serve src/index.html",
+    "watch:css": "tailwindcss -i src/style.css -o src/assets/tailwind/tailwind.css -w",
+    "prod:build": "parcel build src/index.html --no-source-maps --no-cache",
+    "deploy": "sls -s dev deploy"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@types/node": "^12.0.0",
+    "moment": "^2.29.1",
+    "numeral": "^2.0.6",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-image-file-resizer": "^0.4.7",
+    "typescript": "^4.2.3",
+    "uuid": "^8.3.2"
+  },
+  "browserslist": "> 0.2%",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/runtime": "^7.6.3",
+    "@parcel/transformer-image": "^2.0.0-rc.0",
+    "autoprefixer": "latest",
+    "babel-preset-nano-react-app": "^0.1.0",
+    "cssnano": "^5.0.8",
+    "npm-run-all": "^4.1.5",
+    "parcel": "next",
+    "postcss": "^8.3.5",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "latest"
+  },
+  "babel": {
+    "presets": [
+      "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragmaFrag": "React.Fragment"
+        }
+      ]
+    ]
+  }
+}
